@@ -1,0 +1,151 @@
+.leftBar-menu {
+    position: relative;
+    border-left: 1px solid var(--tree-color);
+    padding-left: 10px;
+    background-color: var(--leftBar-backGround-Color);
+}
+
+.leftBar-menu::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 20px;
+    border-left: 1px solid var(--tree-color);
+    top: -20px;
+    left: -1px;
+    pointer-events: none;
+}
+
+#left-bar-container {
+    position: fixed;
+    left: 15px;
+    bottom: 0px;
+    top: 100px;
+    width: 250px;
+    overflow: auto;
+}
+
+#left-bar-main-menu {
+    width: 100%;
+}
+
+.left-bar-folder-logo {
+    width: 40px;
+    pointer-events: none;
+}
+
+.folder-flex {
+    width: 200px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-content: left;
+    align-items: center;
+    pointer-events: none;
+    word-break: break-all;
+}
+
+.left-bar-folder-title {
+    margin-left: 5px;
+    pointer-events: none;
+    word-wrap: break-word;
+}
+
+.leftBar-folder {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    padding-top: 10px;
+    border: 1px solid transparent;
+}
+
+.leftBar-folder:hover {
+    animation: leftBarHover 2s infinite;
+}
+
+.leftBar-folder::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 20px;
+    left: -10px;
+    border-bottom: 1px solid var(--tree-color);
+    pointer-events: none;
+}
+
+.leftBar-folder:last-child::after {
+    content: "";
+    position: absolute;
+    background-color: var(--leftBar-backGround-Color);
+    width: 5px;
+    height: calc(100% - 31px);
+    bottom: 0;
+    left: -12px;
+    pointer-events: none;
+    /* border: 1px solid black; */
+}
+
+.unfolded {
+    filter: drop-shadow(0px 0px 3px rgb(174, 232, 255))drop-shadow(0px 0px 3px rgb(75, 82, 139));
+}
+
+@keyframes leftBarHover {
+    0% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    5% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid transparent;
+    }
+    10% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    15% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid transparent;
+    }
+    20% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    25% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    30% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid transparent;
+    }
+    35% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+    }
+    40% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    45% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid transparent;
+    }
+    50% {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    70% {
+        background: linear-gradient(142deg, rgba(255, 255, 255, 0) 27%, rgba(108, 155, 219, 0.2721463585434174) 54%, rgba(255, 255, 255, 0.2721463585434174) 100%);
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    90% {
+        background-color: transparent;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+    100% {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}

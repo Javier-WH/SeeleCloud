@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Tomorrow-regular";
+    src: url("../FONTS/Tomorrow-Regular.ttf");
+}
+
+:root {
+    --LeftBar-fontSize: 16px;
+    --tree-color: rgb(209, 202, 202);
+    --leftBar-backGround-Color: white;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: var(--LeftBar-fontSize);
+    font-family: 'Tomorrow-regular';
+}
