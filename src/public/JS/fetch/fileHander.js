@@ -1,11 +1,15 @@
 export async function getAllFiles(URL = "ROOT", callback) {
     let ask = await fetch(`/getFiles?url=${URL}`);
     let response = await ask.json();
-    callback(response);
+    if (response.ERROR) {
+        console.error(response.ERROR);
+    } else {
+        callback(response);
+    }
 }
 
 export async function getFolders(URL, callback) {
-    getAllFiles(URL, files => {
+    await getAllFiles(URL, files => {
         let folderList = files.filter(file => {
             return file.type == "folder";
         })
@@ -14,7 +18,7 @@ export async function getFolders(URL, callback) {
 }
 
 export async function getFiles(URL, callback) {
-    getAllFiles(URL, files => {
+    await getAllFiles(URL, files => {
         let fileList = files.filter(file => {
             return file.type != "folder";
         })

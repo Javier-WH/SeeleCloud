@@ -1,8 +1,11 @@
 import { runLeftBar } from "./leftBar/leftBar.js";
 import { runFileContainer } from "./fileContainer/fileContainer.js";
-import { getAllFilesOrdered } from "./fetch/fileHander.js";
+import { runButton } from "./searchBar/btnBack.js"
+import { runSearchBar } from "./searchBar/searchBar.js"
 
-getAllFilesOrdered();
+document.getElementById("togle-loading-screen").classList.add("invisible");
 
+runButton();
 runLeftBar();
 runFileContainer();
+runSearchBar();

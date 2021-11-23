@@ -1,6 +1,7 @@
 import { getURL, setURL, addFolder, setBackURL } from "../URLhandler.js";
 import { getFolders } from "../fetch/fileHander.js";
 import { fillFileContainer } from "../fileContainer/fileContainer.js";
+import { fillSearchBar } from "../searchBar/searchBar.js";
 
 
 
@@ -14,21 +15,24 @@ export async function runLeftBar() {
         if (!e.target.classList.contains("leftBar-menu")) {
 
             if (e.target.classList.contains("unfolded")) {
-                e.target.nextSibling.remove();
+                if (e.target.nextSibling) {
+                    e.target.nextSibling.remove();
+                }
                 e.target.classList.remove("unfolded");
-                document.getElementById(`__IMG__${e.target.id.replace("__LB__", "")}`).src = "../../IMAGES/SVG/folder.svg" // cambia la imagen de la carpeta abierta
+                document.getElementById(`__IMG__${e.target.id.replace("__LB__", "")}`).src = "../../IMAGES/SVG/icons/icon_folder.svg" // cambia la imagen de la carpeta abierta
                 setURL(e.target.id.replace("__LB__", ""));
                 setBackURL();
                 fillFileContainer();
             } else {
+
                 setURL(e.target.id.replace("__LB__", ""));
                 fillFileContainer();
                 let subFolders = document.createElement("div");
                 subFolders.setAttribute("class", "leftBar-menu");
                 getFolders(getURL(), folderList => {
+                    e.target.classList.add("unfolded");
                     if (folderList.length > 0) {
-                        e.target.classList.add("unfolded");
-                        document.getElementById(`__IMG__${e.target.id.replace("__LB__", "")}`).src = "../../IMAGES/SVG/folder_open.svg" // cambia la imagen de la carpeta abierta
+                        document.getElementById(`__IMG__${e.target.id.replace("__LB__", "")}`).src = "../../IMAGES/SVG/icons/icon_folderOpen.svg" // cambia la imagen de la carpeta abierta
                         let html = "";
                         folderList.map(file => {
                             html += writeLeftBarFolders(file)
@@ -38,6 +42,7 @@ export async function runLeftBar() {
                     }
                 });
             }
+            fillSearchBar(getURL());
         }
     })
 
@@ -46,12 +51,13 @@ export async function runLeftBar() {
 }
 
 /////////////////////////////
-export function resetLeftBar() {
+export async function resetLeftBar() {
     setURL("");
+    fillSearchBar();
     fillFileContainer();
     let container = document.getElementById("leftBar-menu");
-    container.innerHTML = ""
-    getFolders(getURL(), files => {
+    container.innerHTML = `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+    await getFolders(getURL(), files => {
         let html = ""
         files.map(file => {
             html += writeLeftBarFolders(file)
@@ -67,16 +73,20 @@ function writeLeftBarFolders(file) {
     let address = file.address.replace("D:/Respaldo Milagros//", "");
     address = address.replace("D:/Respaldo Milagros/", "");
     return `
-            <div class="leftBar-folder" id="__LB__${address}">
+            <div class="leftBar-folder" id="__LB__${address}" >
                 <div class="folder-flex">
-                    <img src="IMAGES/SVG/folder.svg" class="left-bar-folder-logo" id="__IMG__${address}">
+                    <img src="IMAGES/SVG/icons/icon_folder.svg" class="left-bar-folder-logo" id="__IMG__${address}">
                     <span class="left-bar-folder-title">${file.name}</span>
                 </div>
             </div>`
 }
 
 export function openLeftBarFolder(URL) {
-    let folder = "__LB__" + URL;
+    let folder = URL == "" ? "left-barr-folder-root" : "__LB__" + URL;
+    try {
+        document.getElementById(folder).click();
 
-    document.getElementById(folder).click();
+    } catch (error) {
+        console.error("La dirección no existe");
+    }
 }

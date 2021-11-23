@@ -6,39 +6,21 @@ function choseIcon(fileName) {
         return "powerPoint";
     } else if (fileName.includes(".xls") || fileName.includes(".xlsx")) {
         return "excel";
-    } else if (fileName.includes(".3gp")) {
-        return "3gp";
-    } else if (fileName.includes(".xls") || fileName.includes(".xlsx")) {
-        return "excel";
-    } else if (fileName.includes(".bmp")) {
-        return "bmp";
     } else if (fileName.includes(".exe")) {
         return "exe";
-    } else if (fileName.includes(".gif")) {
-        return "gif";
     } else if (fileName.includes(".html")) {
         return "html";
-    } else if (fileName.includes(".jpeg")) {
-        return "jpeg";
-    } else if (fileName.includes(".jpg")) {
-        return "jpg";
-    } else if (fileName.includes(".mp3")) {
-        return "mp3";
-    } else if (fileName.includes(".mp4")) {
-        return "mp4";
-    } else if (fileName.includes(".ogg")) {
-        return "ogg";
+    } else if (fileName.includes(".jpeg") || fileName.includes(".jpg") || fileName.includes(".png") || fileName.includes(".bmp") || fileName.includes(".gif")) {
+        return "img";
+    } else if (fileName.includes(".mp3") || fileName.includes(".wav") || fileName.includes(".ogg")) {
+        return "music";
+    } else if (fileName.includes(".mp4") || fileName.includes(".3gp")) {
+        return "video";
     } else if (fileName.includes(".pdf")) {
         return "pdf";
-    } else if (fileName.includes(".png")) {
-        return "png";
-    } else if (fileName.includes(".rar")) {
-        return "rar";
     } else if (fileName.includes(".tmp")) {
         return "tmp";
-    } else if (fileName.includes(".wav")) {
-        return "wav";
-    } else if (fileName.includes(".zip")) {
+    } else if (fileName.includes(".zip") || fileName.includes(".rar")) {
         return "zip";
     } else {
         return "file";

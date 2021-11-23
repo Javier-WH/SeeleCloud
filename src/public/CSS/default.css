@@ -3,6 +3,11 @@
     src: url("../FONTS/Tomorrow-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Delius";
+    src: url("../FONTS/Delius-Regular.ttf");
+}
+
 :root {
     --LeftBar-fontSize: 16px;
     --tree-color: rgb(209, 202, 202);
@@ -13,5 +18,78 @@
     margin: 0px;
     padding: 0px;
     font-size: var(--LeftBar-fontSize);
-    font-family: 'Tomorrow-regular';
+    font-family: 'Delius';
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    user-select: none;
+}
+
+
+/* ////////////////////////////////////// */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 20000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#loading-logo {
+    width: 200px;
+}
+
+#LS-roller {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#LS-text {
+    color: rgb(7, 148, 219);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+
+/* ////////////////////////////// */
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #fdd68d;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.6em;
+    left: 70%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #000000;
+    z-index: 99999;
+    visibility: hidden;
+}
+
+[data-title] {
+    position: relative;
+}
+
+.invisible {
+    display: none;
 }

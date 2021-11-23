@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="IMAGES/ICON/icon.ico" type="image/x-icon">
-    <title>Seele File Cloud</title>
+    <title>Seele Cloud</title>
 
     <!-- JAVASCRIPT -->
     <!-- <script src="JS/leftBar/leftBar.js" defer></script> -->
@@ -14,17 +14,52 @@
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/default.css">
     <link rel="stylesheet" href="CSS/leftBar/leftBar.css">
-    <link rel="stylesheet" href="CSS/fileContainer/fileContainer.css"> l
+    <link rel="stylesheet" href="CSS/fileContainer/fileContainer.css">
+    <link rel="stylesheet" href="CSS/mainLogo/logo.css">
+    <link rel="stylesheet" href="CSS/btnBack/btnBack.css">
+    <link rel="stylesheet" href="CSS/btnBack/searchBar.css">
+    <link rel="stylesheet" href="CSS/loading/spiner.css">
 
 
 </head>
 
 <body>
+    <div id="togle-loading-screen">
+        <div id="loading-screen">
+            <img src="IMAGES/SVG/CATlogo.svg" id="loading-logo">
+            <div class="lds-roller" id="LS-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <span id="LS-text">Por favor espere</span>
+        </div>
+    </div>
+
+    <div id="btn-container">
+
+    </div>
+
+    <div id="main-logo-container" title="Miau!!!">
+        <div id="logo-subcontainer">
+            <img src="IMAGES/SVG/CATlogo.svg" id="main-logo">
+            <img src="IMAGES/SVG/logo.svg" id="main-logo-title">
+
+
+        </div>
+    </div>
+
+
     <div id="left-bar-container">
         <div id="left-bar-main-menu">
             <div class="leftBar-folder" id="left-barr-folder-root">
                 <div class="folder-flex">
-                    <img src="IMAGES/SVG/folderRoot.svg" class="left-bar-folder-logo">
+                    <img src="IMAGES/SVG/icons/icon_root.svg" class="left-bar-folder-logo">
                     <span class="left-bar-folder-title">Root</span>
                 </div>
             </div>
@@ -32,10 +67,19 @@
         </div>
     </div>
 
+    <div id="address-bar-container">
+        <div id="address-bar-relative">
+            <button id="btn-back"><img src="IMAGES/SVG/return.svg" id="btn-back-image" ></button>
+            <input type="text" id="search-bar" autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+
+
     <div id="file-container">
 
 
     </div>
+
 
 </body>
 
