@@ -87,6 +87,9 @@ export function openLeftBarFolder(URL) {
         document.getElementById(folder).click();
 
     } catch (error) {
-        console.error("La dirección no existe");
+        // console.error("La dirección no existe");
+        setTimeout(() => {
+            document.getElementById("togle-loading-screen").classList.add("invisible");
+        }, 1500);
     }
 }

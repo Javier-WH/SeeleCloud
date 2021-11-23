@@ -16,6 +16,10 @@ router.get("/", (req, res) => {
 
 router.get("/getFiles", (req, res) => {
     res.send(fileControler.getFiles(req.query));
+});
+
+router.get("/preview", (req, res) => {
+    res.send("OK");
 })
 
 module.exports = router;

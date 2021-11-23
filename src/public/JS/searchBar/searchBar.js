@@ -40,7 +40,7 @@ export function runSearchBar() {
                     observer.disconnect();
                     setTimeout(() => {
                         document.getElementById("togle-loading-screen").classList.add("invisible");
-                    }, 1000);
+                    }, 1500);
                     // console.log('observer disconected');
                 }
 
