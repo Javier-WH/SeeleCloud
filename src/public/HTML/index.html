@@ -9,7 +9,7 @@
     <title>Seele Cloud</title>
 
     <!-- JAVASCRIPT -->
-    <!-- <script src="JS/leftBar/leftBar.js" defer></script> -->
+    <script src="sweetalert2/dist/sweetalert2.all.js"></script>
     <script src="JS/main.js" type="module" defer></script>
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/default.css">
@@ -20,11 +20,13 @@
     <link rel="stylesheet" href="CSS/btnBack/searchBar.css">
     <link rel="stylesheet" href="CSS/loading/spiner.css">
     <link rel="stylesheet" href="CSS/btnBar/btnBar.css">
+    <link rel="stylesheet" href="CSS/filePreview/filePreview.css">
 
 
 </head>
 
 <body>
+
 
     <div id="togle-loading-screen">
         <div id="loading-screen">
@@ -44,12 +46,12 @@
     </div>
 
     <div id="btn-container">
-        <a class="btnBar-button" id="btn-download"><img src="IMAGES/SVG/icon_download.svg" class="btnBar-icon"></a>
-        <a class="btnBar-button" id="btn-upload"><img src="IMAGES/SVG/icon_upload.svg" class="btnBar-icon"></a>
-        <a class="btnBar-button" id="btn-search"><img src="IMAGES/SVG/icon_search.svg" class="btnBar-icon"></a>
-        <a class="btnBar-button" id="btn-preview"><img src="IMAGES/SVG/icon_preview.svg" class="btnBar-icon"></a>
-        <a class="btnBar-button" id="btn-newFolder"><img src="IMAGES/SVG/icon_newFolder.svg" class="btnBar-icon"></a>
-        <a class="btnBar-button" id="btn-delete"><img src="IMAGES/SVG/icon_delete.svg" class="btnBar-icon"></a>
+        <a class="btnBar-button" id="btn-download"><img src="IMAGES/SVG/icon_download.svg" class="btnBar-icon" title="Descargar el elemento seleccionado"></a>
+        <a class="btnBar-button" id="btn-upload"><img src="IMAGES/SVG/icon_upload.svg" class="btnBar-icon" title="Guardar archivo"></a>
+        <a class="btnBar-button" id="btn-search"><img src="IMAGES/SVG/icon_search.svg" class="btnBar-icon" title="Buscar"></a>
+        <a class="btnBar-button" id="btn-preview"><img src="IMAGES/SVG/icon_preview.svg" class="btnBar-icon" title="Vista previa"></a>
+        <a class="btnBar-button" id="btn-newFolder"><img src="IMAGES/SVG/icon_newFolder.svg" class="btnBar-icon" title="Crear nueva carpeta"></a>
+        <a class="btnBar-button" id="btn-delete"><img src="IMAGES/SVG/icon_delete.svg" class="btnBar-icon" title="Eliminar elemento"></a>
     </div>
 
     <div id="main-logo-container" title="Miau!!!">

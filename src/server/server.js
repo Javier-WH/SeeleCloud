@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 //rutas y midlewares
 app.use(require(path.join(__dirname, "routes/get.js"))); //get
 app.use(require(path.join(__dirname, "routes/post.js"))); //post
-
+app.use(require(path.join(__dirname, "routes/delete.js"))); //delete
 
 
 ////server listener

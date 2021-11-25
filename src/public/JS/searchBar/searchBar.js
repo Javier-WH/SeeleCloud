@@ -10,6 +10,7 @@ export function runSearchBar() {
         if (e.key == "Enter") {
             document.getElementById("togle-loading-screen").classList.remove("invisible");
             let URL = bar.value.replace("Root:/", "")
+
             let urlList = URL.split("/");
             let dirAc = "";
             let acumulator = 0;
@@ -45,7 +46,6 @@ export function runSearchBar() {
                 }
 
             }
-
 
         }
     })

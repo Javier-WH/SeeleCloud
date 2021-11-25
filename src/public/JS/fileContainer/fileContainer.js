@@ -2,19 +2,18 @@ import { getURL, setURL, addFolder, setBackURL } from "../URLhandler.js";
 import { getAllFiles, getAllFilesOrdered } from "../fetch/fileHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
-
+import { previewFile } from "../fetch/filePreview.js";
 const container = document.getElementById("file-container");
 
 let SELECTED = "";
 
 export function runFileContainer() {
 
-    // fillFileContainer();
+
 
     ///evento al hacer doble-click sobre un archivo o carpeta
     document.getElementById("file-container").addEventListener("dblclick", e => {
         if (e.target.id != "file-container") {
-
             if (e.target.classList.contains("folder")) {
                 setURL(e.target.id);
                 fillFileContainer();
@@ -24,7 +23,9 @@ export function runFileContainer() {
                 } catch (error) {
 
                 } /////////////////////////////////////////////////////////////////////<=revisar
-            } else {}
+            } else {
+                previewFile(e.target.id);
+            }
         }
     })
 
@@ -78,5 +79,8 @@ export function fillFileContainer() {
         container.innerHTML = html;
         cleanSelected();
     })
+}
 
+export function getSelected() {
+    return SELECTED;
 }

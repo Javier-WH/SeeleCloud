@@ -48,3 +48,22 @@ export function getAllFilesOrdered(URL, callback) {
         })
     })
 }
+
+export async function getFile(URL = "ROOT", callback) {
+
+    if (URL != "ROOT") {
+        let ask = await fetch(`/downloadFile?url=${URL}`);
+        let response = await ask.blob();
+        callback(response);
+    }
+}
+
+export async function getFolder(URL = "ROOT", callback) {
+
+    if (URL != "ROOT") {
+        let ask = await fetch(`/downloadFolder?url=${URL}`);
+        let response = await ask.blob();
+        callback(response);
+    }
+}
+//////////////////////////////////////////
