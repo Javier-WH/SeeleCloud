@@ -68,7 +68,7 @@ function deleteFolder(url, callback) {
         if (err) {
             console.error(err);
         }
-        callback();
+        callback("OK");
     });
 
 }

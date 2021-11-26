@@ -7,6 +7,7 @@ import { getURL, setURL, addFolder, setBackURL } from "../URLhandler.js";
 import { createFolder } from "../fetch/folderHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { getFile, getFolder } from "../fetch/fileHander.js";
+import { search } from "../search/search.js";
 
 
 export function runBtnBar() {
@@ -181,11 +182,13 @@ export function runBtnBar() {
         }
     })
 
-
+    document.getElementById("btn-search").addEventListener("click", () => {
+        letsSearch();
+    })
 
 }
 
-
+/////////////////////
 async function acceptDelete(callback) {
 
     const { value: text } = await Swal.fire({
@@ -208,5 +211,29 @@ async function acceptDelete(callback) {
         }
     }
 
+
+}
+
+
+//////////////////////////////
+
+
+async function letsSearch() {
+
+    const { value: text } = await Swal.fire({
+        title: 'Buscar',
+        input: 'text',
+        inputLabel: 'Escribe el nombre o parte del nombre del archivo que deseas buscar',
+        inputPlaceholder: 'Enter your password',
+        inputAttributes: {
+            maxlength: 10,
+            autocapitalize: 'off',
+            autocorrect: 'off'
+        }
+    })
+
+    if (text) {
+        search(text);
+    }
 
 }

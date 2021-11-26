@@ -13,7 +13,7 @@ export async function runLeftBar() {
     //evento click en las carpetas de la barra izquierda
     document.getElementById("leftBar-menu").addEventListener("click", e => {
         if (!e.target.classList.contains("leftBar-menu")) {
-
+            document.getElementById("file-container-message").classList.add("invisible");
             if (e.target.classList.contains("unfolded")) {
                 if (e.target.nextSibling) {
                     e.target.nextSibling.remove();
@@ -82,6 +82,7 @@ function writeLeftBarFolders(file) {
 }
 
 export function openLeftBarFolder(URL) {
+
     let folder = URL == "" ? "left-barr-folder-root" : "__LB__" + URL;
     try {
         document.getElementById(folder).click();

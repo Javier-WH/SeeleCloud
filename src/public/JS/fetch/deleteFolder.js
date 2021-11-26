@@ -14,6 +14,7 @@ export async function deleteFolder(URL, callback) {
         },
     })
     let response = await ask.text();
+
     openLeftBarFolder(refreshURL);
     callback(response);
 }

@@ -1,0 +1,11 @@
+#file-container-message {
+    position: absolute;
+    left: 350px;
+    top: 150px;
+    z-index: 300;
+    background-color: bisque;
+    border: var(--tree-color);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+}

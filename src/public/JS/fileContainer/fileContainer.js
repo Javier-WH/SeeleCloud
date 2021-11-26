@@ -3,6 +3,7 @@ import { getAllFiles, getAllFilesOrdered } from "../fetch/fileHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
 import { previewFile } from "../fetch/filePreview.js";
+const messageBox = document.getElementById("file-container-message");
 const container = document.getElementById("file-container");
 
 let SELECTED = "";
@@ -46,6 +47,12 @@ export function runFileContainer() {
         }
     })
 
+    /////al hacer click sobre el mensaje de filtro
+
+    messageBox.addEventListener("click", () => {
+        messageBox.classList.add("invisible");
+        fillFileContainer();
+    })
 
 }
 //limpia la seleccion
