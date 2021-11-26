@@ -1,6 +1,7 @@
 #file-container {
     padding-top: 80px;
     padding-left: 30px;
+    padding-right: 30px;
     border-top: 2px solid var(--tree-color);
     border-left: 2px solid var(--tree-color);
     position: fixed;

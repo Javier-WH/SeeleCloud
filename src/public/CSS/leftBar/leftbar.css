@@ -26,6 +26,7 @@
 }
 
 #left-bar-main-menu {
+    position: relative;
     width: 100%;
 }
 

@@ -1,0 +1,78 @@
+@media screen and (max-width: 599px) {
+    /*
+  *Logo
+  */
+    /* left: 0; */
+    #main-logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /*
+    *left-bar
+    */
+    #left-bar-container {
+        width: 200px !important;
+    }
+    .left-bar-folder-title {
+        font-size: 12px;
+    }
+    /*
+    *btn-top-bar
+    */
+    /* left: 210px !important; */
+    #btn-container {
+        position: fixed;
+        right: 0;
+        top: 10px;
+        left: 220px !important;
+        height: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: stretch;
+    }
+    /*
+    * file-container
+    */
+    /* left: 220px; */
+    #file-container {
+        padding-top: 70px;
+        padding-left: 5px !important;
+        bottom: 10px;
+        left: 220px;
+        column-gap: 5px !important;
+        row-gap: 10px;
+    }
+    /* left: 290px !important; */
+    #file-container-message {
+        left: 290px !important;
+    }
+    /*
+    *search-bar
+    */
+    /* left: 235px !important; */
+    #address-bar-container {
+        left: 235px !important;
+        border-top-left-radius: 20%;
+    }
+    /* left: 220px; */
+    #button-toggle-leftBar {
+        z-index: 400;
+        position: absolute;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        border: 1px solid var(--tree-color);
+        background-color: var(--tree-color);
+        width: 10px;
+        height: 40px;
+        left: 220px;
+        top: 150px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        color: white;
+    }
+    .hidden {
+        margin-left: -220px !important;
+    }
+}

@@ -1,0 +1,221 @@
+@media screen and (max-height: 830px) {
+    /*
+  *Logo
+  */
+    #main-logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #logo-subcontainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    #main-logo {
+        position: absolute;
+        width: 110px;
+        top: 10px;
+        left: 10px;
+    }
+    #main-logo-title {
+        position: absolute;
+        width: 110px;
+        top: 10px;
+        left: 100px;
+    }
+    /*
+    *left-bar
+    */
+    #left-bar-container {
+        position: fixed;
+        left: 15px;
+        bottom: 0px;
+        top: 140px;
+        width: 250px;
+        overflow: auto;
+    }
+    /*
+    *btn-top-bar
+    */
+    #btn-container {
+        position: fixed;
+        right: 0;
+        top: 10px;
+        left: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: left;
+        align-items: stretch;
+    }
+    .btnBar-button {
+        position: relative;
+        margin-right: 5px;
+    }
+    .btnBar-icon {
+        margin: auto;
+        width: 40px;
+    }
+    .btnBar-icon:hover {
+        width: 60px;
+    }
+    /*
+    * file-container
+    */
+    #file-container {
+        padding-top: 70px;
+        padding-left: 20px;
+        border-top: 2px solid var(--tree-color);
+        border-left: 2px solid var(--tree-color);
+        position: fixed;
+        top: 67px;
+        right: 0px;
+        bottom: 10px;
+        overflow-y: auto;
+        border-top-left-radius: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    #file-container-message {
+        position: absolute;
+        left: 350px;
+        top: 115px;
+        z-index: 300;
+        background-color: bisque;
+        border: var(--tree-color);
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 20px;
+    }
+    /*
+    *search-bar
+    */
+    #address-bar-container {
+        background-color: white;
+        border-bottom: .5px solid var(--tree-color);
+        height: 40px;
+        position: absolute;
+        right: 0;
+        left: 300px;
+        top: 69px;
+        z-index: 101;
+    }
+}
+
+
+/*
+*
+*
+*
+*
+*/
+
+@media screen and (max-height: 450px) {
+    /*
+  *Logo
+  */
+    #main-logo-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #logo-subcontainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    #main-logo {
+        position: absolute;
+        width: 70px;
+        top: 10px;
+        left: 10px;
+    }
+    #main-logo-title {
+        position: absolute;
+        width: 70px;
+        top: 10px;
+        left: 70px;
+    }
+    /*
+    *left-bar
+    */
+    #left-bar-container {
+        position: fixed;
+        left: 15px;
+        bottom: 0px;
+        top: 80px;
+        width: 250px;
+        overflow: auto;
+    }
+    /*
+    *btn-top-bar
+    */
+    #btn-container {
+        position: fixed;
+        right: 0;
+        top: 5px;
+        left: 300px;
+        height: 35px;
+        display: flex;
+        justify-content: left;
+        align-items: stretch;
+    }
+    .btnBar-button {
+        position: relative;
+        margin-right: 5px;
+    }
+    .btnBar-icon {
+        margin: auto;
+        width: 35px;
+    }
+    .btnBar-icon:hover {
+        width: 45px;
+    }
+    /*
+    * file-container
+    */
+    #file-container {
+        padding-top: 60px;
+        padding-left: 20px;
+        border-top: 2px solid var(--tree-color);
+        border-left: 2px solid var(--tree-color);
+        position: fixed;
+        top: 47px;
+        right: 0px;
+        bottom: 10px;
+        overflow-y: auto;
+        border-top-left-radius: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    #file-container-message {
+        position: absolute;
+        left: 350px;
+        top: 95px;
+        z-index: 300;
+        background-color: bisque;
+        border: var(--tree-color);
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 20px;
+    }
+    /*
+    *search-bar
+    */
+    #address-bar-container {
+        background-color: white;
+        border-bottom: .5px solid var(--tree-color);
+        height: 40px;
+        position: absolute;
+        right: 0;
+        left: 300px;
+        top: 49px;
+        z-index: 101;
+    }
+}
