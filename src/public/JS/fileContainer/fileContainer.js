@@ -50,12 +50,17 @@ export function runFileContainer() {
 
     /////al hacer click sobre el mensaje de filtro
 
-    messageBox.addEventListener("click", () => {
-        messageBox.classList.add("invisible");
-        fillFileContainer();
-    })
+    messageBox.addEventListener("click", cleanMessageBox)
 
 }
+
+export function cleanMessageBox() {
+    messageBox.innerText = "";
+    messageBox.classList.add("invisible");
+    fillFileContainer();
+}
+
+
 //limpia la seleccion
 function cleanSelected() {
     SELECTED = "";

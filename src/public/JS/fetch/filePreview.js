@@ -1,7 +1,17 @@
-import { suportedAudioFiles, suportedImageFiles, suportedVideoFiles, suportedDocumentFiles, suportedFiles } from "../utility.js";
+import { suportedAudioFiles, suportedImageFiles, suportedVideoFiles, suportedDocumentFiles, suportedFiles, detectMob } from "../utility.js";
 
 export async function previewFile(URL) {
-    if (suportedFiles(URL)) {
+
+    if (suportedDocumentFiles(URL) && detectMob()) {
+        Swal.fire({
+            title: '¡¡¡Miau!!!',
+            text: 'No se puede previsualizar PDF ni documentos de MS-Office en navegadores moviles',
+            imageUrl: 'IMAGES/SVG/CATlogo.svg',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+        });
+    } else if (suportedFiles(URL)) {
         document.getElementById("togle-loading-screen").classList.remove("invisible");
         let ask = await fetch(`/preview?url=${URL}`);
 
@@ -23,22 +33,24 @@ export async function previewFile(URL) {
             <source src="${file}" type="video/mp4">
             </video>`
         } else if (suportedDocumentFiles(URL)) {
-            frame = `<div class="wrap"><iframe class="frame" src="${file}"></iframe></div>`;
+
+            frame = `<iframe id="iframe-preview" src="${file}"></iframe>`;
+            width = "600px";
+
         }
 
-        if (frame != "no soportado") {
-            Swal.fire({
-                title: 'Vista Previa',
-                html: frame,
-                width: width,
-                backdrop: `
+        Swal.fire({
+            title: 'Vista Previa',
+            html: frame,
+            width: width,
+            backdrop: `
             rgb(46, 188, 224)
             url("IMAGES/SVG/CATlogo.svg")
             left top
             no-repeat
             `
-            });
-        }
+        });
+
     } else {
         Swal.fire({
             title: '¡¡¡Miau!!!',

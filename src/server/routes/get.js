@@ -42,6 +42,11 @@ router.get("/downloadFolder", (req, res) => {
 
 router.get("/getBaseAddress", (req, res) => {
     res.send(routeControlller.getRoute());
-})
+});
+
+router.get("/config", (req, res) => {
+    res.send("En construcción...")
+});
+
 
 module.exports = router;

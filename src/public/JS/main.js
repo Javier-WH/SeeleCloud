@@ -15,7 +15,7 @@ getBaseAddress(res => {
     runFileContainer();
     runSearchBar();
     runBtnBar();
-
+    document.getElementById("file-container-message").innerText = "";
 
 });
 

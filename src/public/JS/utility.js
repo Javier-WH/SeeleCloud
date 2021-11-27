@@ -12,7 +12,7 @@ export function suportedAudioFiles(file) {
 
 //verifica que el formato de imagen esta soportado por la vista previa
 export function suportedImageFiles(file) {
-    const supportedImageList = [".jpg", ".png", ".jpeg", ".gif", ".bmp"];
+    const supportedImageList = [".jpg", ".png", ".jpeg", ".gif"];
     file = file.toLowerCase();
     for (let i = 0; i < supportedImageList.length; i++) {
         if (file.includes(supportedImageList[i])) {
@@ -24,7 +24,7 @@ export function suportedImageFiles(file) {
 
 //verifica que el formato de video esta soportado por la vista previa
 export function suportedVideoFiles(file) {
-    const supportedVideoList = [".mp4", ".avi", ".wmv", ".mkv", ".3gp"];
+    const supportedVideoList = [".mp4", ".avi", ".3gp"];
     file = file.toLowerCase();
     for (let i = 0; i < supportedVideoList.length; i++) {
         if (file.includes(supportedVideoList[i])) {
@@ -51,4 +51,21 @@ export function suportedDocumentFiles(file) {
 export function suportedFiles(file) {
     return suportedAudioFiles(file) || suportedVideoFiles(file) || suportedDocumentFiles(file) || suportedImageFiles(file);
 
+}
+
+
+export function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
 }

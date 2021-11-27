@@ -1,12 +1,15 @@
 const container = document.getElementById("file-container");
 const messageBox = document.getElementById("file-container-message");
+import { fillFileContainer } from "../fileContainer/fileContainer.js";
 // const bar = document.getElementById("search-bar");
 import { getURL } from "../URLhandler.js";
 
 
+//////////////////////reparar bug cuando se hacen dos busquedas seguidas
 export function search(word = "") {
-    word = word.toLowerCase()
     let htmlCollection = container.getElementsByClassName("file");
+
+    word = word.toLowerCase()
     let elementList = [...htmlCollection];
     let fileList = [];
 
@@ -21,10 +24,11 @@ export function search(word = "") {
         }
     }
 
-    // console.log(fileList);
+
 
     fillSearch(fileList);
     setMessage(word);
+
 
 }
 
@@ -48,6 +52,11 @@ function fillSearch(fileList) {
 ////////////////
 
 function setMessage(message) {
-    messageBox.innerText = `Se ha aplicado el filtro "${message}"`;
+
+    if (messageBox.innerText == "") {
+        messageBox.innerText = `Se ha aplicado el filtro "${message}"`;
+    } else {
+        messageBox.innerText += `... Y se ha aplicado el filtro "${message}"`;
+    }
     messageBox.classList.remove("invisible");
 }

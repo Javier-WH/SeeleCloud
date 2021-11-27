@@ -2,7 +2,7 @@ import { previewFile } from "../fetch/filePreview.js";
 import { uploadFile } from "../fetch/uploadFile.js";
 import { deleteFile } from "../fetch/deleteFile.js";
 import { deleteFolder } from "../fetch/deleteFolder.js";
-import { getSelected } from "../fileContainer/fileContainer.js";
+import { getSelected, cleanMessageBox } from "../fileContainer/fileContainer.js";
 import { getURL, setURL, addFolder, setBackURL } from "../URLhandler.js";
 import { createFolder } from "../fetch/folderHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
@@ -185,6 +185,7 @@ export function runBtnBar() {
     })
 
     document.getElementById("btn-search").addEventListener("click", () => {
+        // cleanMessageBox();
         letsSearch();
     })
 
