@@ -2,6 +2,7 @@ import { getURL, setURL, addFolder, setBackURL } from "../URLhandler.js";
 import { getFolders } from "../fetch/fileHander.js";
 import { fillFileContainer } from "../fileContainer/fileContainer.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
+import { cleanURL } from "../urlCleaner/urlCleaner.js"
 
 
 
@@ -70,8 +71,10 @@ export async function resetLeftBar() {
 
 ///////////////////////////////////
 function writeLeftBarFolders(file) {
-    let address = file.address.replace("D:/Respaldo Milagros//", "");
-    address = address.replace("D:/Respaldo Milagros/", "");
+    // let address = file.address.replace("D:/Respaldo Milagros//", "");
+    // address = address.replace("D:/Respaldo Milagros/", "");
+    let address = cleanURL(file.address);
+
     return `
             <div class="leftBar-folder" id="__LB__${address}" >
                 <div class="folder-flex">

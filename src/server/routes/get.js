@@ -6,6 +6,7 @@ const htmlRoute = (path.join(__dirname, "../../public/HTML/"));
 //controlers
 const fileControler = require(path.join(__dirname, "../controllers/fileController.js"))
 const folderControler = require(path.join(__dirname, "../controllers/folderController.js"))
+const routeControlller = require(path.join(__dirname, "../controllers/routeController.js"));
 
 
 
@@ -33,13 +34,14 @@ router.get("/createFolder", (req, res) => {
 router.get("/downloadFile", (req, res) => {
     res.download(fileControler.downloadFile(req.query));
 
-})
+});
+
 router.get("/downloadFolder", (req, res) => {
-
-
     folderControler.downloadFolder(req.query, response => { res.download(response) });
+});
 
-
+router.get("/getBaseAddress", (req, res) => {
+    res.send(routeControlller.getRoute());
 })
 
 module.exports = router;

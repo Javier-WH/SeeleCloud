@@ -1,13 +1,13 @@
 const path = require('path');
 const { getfileName } = require(path.join(__dirname, '../utility/getFileName.js'))
 const { execSync } = require('child_process');
-
+const routeControlller = require(path.join(__dirname, "./routeController.js"));
 const fileHandler = require(path.join(__dirname, '../modules/fileHandler.js'));
 
 
 function getFiles(URL) {
     try {
-        let cleanURL = URL.url == "ROOT" ? "D:/Respaldo Milagros" : "D:/Respaldo Milagros/" + URL.url;
+        let cleanURL = URL.url == "ROOT" ? routeControlller.getRoute() : routeControlller.getRoute() + URL.url;
         let filesArray = fileHandler.getFiles(cleanURL);
         return JSON.stringify(filesArray);
     } catch (error) {
@@ -16,7 +16,7 @@ function getFiles(URL) {
 }
 
 function getFile(URL) {
-    let cleanURL = "D:/Respaldo Milagros/" + URL.url;
+    let cleanURL = routeControlller.getRoute() + URL.url;
     let ext = path.extname(cleanURL).toLowerCase();
 
 
@@ -48,7 +48,7 @@ function getFile(URL) {
 }
 
 function downloadFile(URL) {
-    let cleanURL = URL.url == "ROOT" ? "ROOT" : "D:/Respaldo Milagros/" + URL.url;
+    let cleanURL = URL.url == "ROOT" ? "ROOT" : routeControlller.getRoute() + URL.url;
     if (cleanURL != "ROOT") {
         return cleanURL;
     }
@@ -56,7 +56,7 @@ function downloadFile(URL) {
 
 function uploadFile({ route, fileName }, callback) {
 
-    let newPath = "D:/Respaldo Milagros/" + route + "/" + fileName;
+    let newPath = routeControlller.getRoute() + route + "/" + fileName;
     let oldPath = path.join(__dirname, "../utility/files/" + fileName)
 
     fileHandler.moveFile(oldPath, newPath, () => {
@@ -67,7 +67,7 @@ function uploadFile({ route, fileName }, callback) {
 
 function deleteFile({ url }, callback) {
 
-    let fileAddress = "D:/Respaldo Milagros/" + url;
+    let fileAddress = routeControlller.getRoute() + url;
     fileHandler.deleteFile(fileAddress);
     callback("OK");
 }

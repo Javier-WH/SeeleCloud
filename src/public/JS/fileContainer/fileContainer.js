@@ -3,6 +3,7 @@ import { getAllFiles, getAllFilesOrdered } from "../fetch/fileHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
 import { previewFile } from "../fetch/filePreview.js";
+import { cleanURL } from "../urlCleaner/urlCleaner.js"
 const messageBox = document.getElementById("file-container-message");
 const container = document.getElementById("file-container");
 
@@ -70,8 +71,11 @@ export function fillFileContainer() {
     container.innerHTML = `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
     getAllFilesOrdered(getURL(), files => {
         files.map(file => {
-            let address = file.address.replace("D:/Respaldo Milagros//", "");
-            address = address.replace("D:/Respaldo Milagros/", "");
+            // cleanURL(files[0].address);
+            // let address = file.address.replace("D:/Respaldo Milagros//", "");
+            // address = address.replace("D:/Respaldo Milagros/", "");
+
+            let address = cleanURL(file.address);
 
             let icon = file.type == "folder" ? "IMAGES/SVG/icons/icon_folder.svg" : `IMAGES/SVG/icons/icon_${file.icon}.svg`;
             let type = file.type == "folder" ? "folder" : "";
