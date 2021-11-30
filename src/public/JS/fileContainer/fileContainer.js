@@ -4,6 +4,7 @@ import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
 import { previewFile } from "../fetch/filePreview.js";
 import { cleanURL } from "../urlCleaner/urlCleaner.js"
+import { setORIGINAL_CONTAINER_DATA, removeFilter, cleanAllFilters } from "../search/search.js";
 const messageBox = document.getElementById("file-container-message");
 const container = document.getElementById("file-container");
 
@@ -53,13 +54,14 @@ export function runFileContainer() {
     messageBox.addEventListener("click", cleanMessageBox)
 
 }
+////////////////////////////
+export function cleanMessageBox(e) {
+    if (e.target.classList.contains("filterMessage")) {
+        removeFilter(e.target.id);
 
-export function cleanMessageBox() {
-    messageBox.innerText = "";
-    messageBox.classList.add("invisible");
-    fillFileContainer();
+    }
 }
-
+///////////////////////////////////////////////
 
 //limpia la seleccion
 function cleanSelected() {
@@ -94,6 +96,8 @@ export function fillFileContainer() {
         })
         container.innerHTML = html;
         cleanSelected();
+        cleanAllFilters();
+        setORIGINAL_CONTAINER_DATA();
     })
 }
 

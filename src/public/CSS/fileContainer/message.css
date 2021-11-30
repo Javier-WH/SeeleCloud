@@ -3,9 +3,33 @@
     left: 350px;
     top: 150px;
     z-index: 300;
-    background-color: bisque;
-    border: var(--tree-color);
+}
+
+#filterTag {
+    color: #2cbce0;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.filterMessage {
+    position: relative;
+    color: #2cbce0;
+    font-weight: 500;
+    margin-right: 15px;
+    border: 1px solid var(--tree-color);
     padding-left: 5px;
-    padding-right: 5px;
+    padding-right: 15px;
     border-radius: 20px;
+}
+
+.filterMessage::after {
+    position: absolute;
+    content: "x";
+    /* border: 1px solid black; */
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    text-align: right;
+    top: -1;
+    right: 3;
 }
