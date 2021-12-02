@@ -22,10 +22,11 @@
     border-bottom: .5px solid var(--tree-color);
     height: 40px;
     position: absolute;
-    right: 0;
+    right: 430px;
     left: 300px;
     top: 102px;
     z-index: 101;
+    transition: 1s ease-in-out;
 }
 
 #address-bar-relative {

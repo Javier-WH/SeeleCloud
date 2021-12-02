@@ -3,6 +3,7 @@ import { getAllFiles, getAllFilesOrdered } from "../fetch/fileHander.js";
 import { openLeftBarFolder } from "../leftBar/leftBar.js";
 import { fillSearchBar } from "../searchBar/searchBar.js";
 import { previewFile } from "../fetch/filePreview.js";
+import { inPagePreviewFile } from "../fetch/inpageFilePreView.js";
 import { cleanURL } from "../urlCleaner/urlCleaner.js"
 import { setORIGINAL_CONTAINER_DATA, removeFilter, cleanAllFilters } from "../search/search.js";
 const messageBox = document.getElementById("file-container-message");
@@ -27,7 +28,9 @@ export function runFileContainer() {
 
                 } /////////////////////////////////////////////////////////////////////<=revisar
             } else {
-                previewFile(e.target.id);
+                if (window.innerWidth <= 1001) {
+                    previewFile(e.target.id);
+                }
             }
         }
     })
@@ -39,6 +42,13 @@ export function runFileContainer() {
                 cleanSelected();
                 SELECTED = e.target.id;
                 e.target.classList.add("selected");
+
+                if (!e.target.classList.contains("folder") && window.innerWidth >= 1001) {
+                    document.getElementById("inPage-preView").innerHTML = `<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>`;
+
+                    inPagePreviewFile(e.target.id).then(element => { document.getElementById("inPage-preView").innerHTML = element })
+
+                }
             }
         })
         //al hacer click fuera del contenedor de los archvos
@@ -103,4 +113,10 @@ export function fillFileContainer() {
 
 export function getSelected() {
     return SELECTED;
+}
+export function setSelected(file) {
+
+    cleanSelected();
+    SELECTED = file;
+    document.getElementById(file).classList.add("selected");
 }

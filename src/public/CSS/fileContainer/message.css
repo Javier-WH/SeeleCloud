@@ -2,7 +2,9 @@
     position: absolute;
     left: 350px;
     top: 150px;
+    right: 420px;
     z-index: 300;
+    transition: 1s ease-in-out;
 }
 
 #filterTag {

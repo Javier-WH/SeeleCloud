@@ -1,3 +1,64 @@
+@media screen and (min-device-width: 1001px) and (max-device-width: 1300px) {
+    #file-container {
+        right: 200px !important;
+    }
+    #address-bar-container {
+        position: absolute;
+        right: 200px !important;
+    }
+    #inPage-preView {
+        width: 200px;
+        display: flex !important;
+    }
+    #btn-preview {
+        display: none;
+    }
+    #inpagePrewview-title {
+        width: 195px;
+        display: inline;
+    }
+    #img-preview {
+        margin-right: -3px;
+        right: 0px;
+        padding: 0px;
+        height: 260px;
+        width: 195px;
+    }
+    #iframe-preview {
+        margin-right: -3px;
+        right: 0px;
+        height: 160px;
+        width: 195px;
+        margin: auto;
+    }
+    #previewVideo {
+        margin-right: -3px;
+        right: 0px;
+        height: 160px;
+        width: 190px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-device-width: 1000px) {
+    #file-container {
+        right: 0px !important;
+    }
+    #address-bar-container {
+        position: absolute;
+        right: 0px !important;
+    }
+    #inPage-preView {
+        display: none !important;
+    }
+    #btn-preview {
+        display: inline;
+    }
+    #inpagePrewview-title {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 599px) {
     /*
   *Logo
@@ -71,6 +132,7 @@
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
         color: white;
+        transition: 1s ease-in-out;
     }
     .hidden {
         margin-left: -220px !important;

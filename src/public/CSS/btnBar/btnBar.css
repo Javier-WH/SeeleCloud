@@ -7,6 +7,7 @@
     display: flex;
     justify-content: left;
     align-items: stretch;
+    transition: 1s ease-in-out;
 }
 
 .btnBar-button {
@@ -21,4 +22,8 @@
 
 .btnBar-icon:hover {
     width: 70px;
+}
+
+#btn-preview {
+    display: none;
 }

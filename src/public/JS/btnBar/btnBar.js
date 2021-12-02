@@ -18,6 +18,7 @@ export function runBtnBar() {
             let isFile = !document.getElementById(selected).classList.contains("folder");
             if (isFile) {
                 previewFile(selected);
+
             } else {
                 openLeftBarFolder(selected);
             }

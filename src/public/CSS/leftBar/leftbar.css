@@ -23,6 +23,7 @@
     top: 190px;
     width: 250px;
     overflow: auto;
+    transition: 1s ease-in-out;
 }
 
 #left-bar-main-menu {

@@ -4,9 +4,10 @@
     padding-right: 30px;
     border-top: 2px solid var(--tree-color);
     border-left: 2px solid var(--tree-color);
+    border-right: 1px solid var(--tree-color);
     position: fixed;
     top: 100px;
-    right: 0px;
+    right: 410px;
     bottom: 10px;
     left: 270px;
     overflow-y: auto;
@@ -16,6 +17,7 @@
     align-content: flex-start;
     column-gap: 20px;
     row-gap: 20px;
+    transition: 1s ease-in-out;
 }
 
 .file {

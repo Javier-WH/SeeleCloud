@@ -1,0 +1,27 @@
+#inPage-preView {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 399px;
+    bottom: 0px;
+    /* border-top: 1px solid var(--tree-color); */
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    row-gap: 0px;
+    transition: 1s ease-in-out;
+}
+
+#inpagePrewview-title {
+    position: absolute;
+    width: 399px;
+    text-align: center;
+    right: 0;
+    top: 110px;
+    color: var(--tree-color);
+    font-weight: 600;
+    font-size: 20px;
+}
