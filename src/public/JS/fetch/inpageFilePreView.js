@@ -38,4 +38,8 @@ export async function inPagePreviewFile(URL) {
     } else {
         return `<span>El formato seleccionado no está soportado</span>`;
     }
+
+
+
+
 }

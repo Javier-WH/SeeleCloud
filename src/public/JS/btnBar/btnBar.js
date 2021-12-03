@@ -193,7 +193,7 @@ export function runBtnBar() {
 }
 
 /////////////////////
-async function acceptDelete(callback) {
+export async function acceptDelete(callback) {
 
     const { value: text } = await Swal.fire({
         title: 'Escribe "Eliminar" para borrar el elemento seleccionado',

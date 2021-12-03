@@ -56,6 +56,7 @@ export function runFileContainer() {
     window.addEventListener("click", e => {
         if (!e.target.classList.contains("file")) {
             cleanSelected();
+            document.getElementById("inPage-preView").innerHTML = "";
         }
     })
 

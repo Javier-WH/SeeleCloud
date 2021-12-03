@@ -5,6 +5,7 @@ import { runSearchBar } from "./searchBar/searchBar.js"
 import { runBtnBar } from "./btnBar/btnBar.js"
 import { getBaseAddress, setBaseAddress } from "./urlCleaner/urlCleaner.js";
 import { runRightClickMenu } from "./mouseMenu/rightClickMenu.js"
+import { runDropFiles } from "./dropFiles/dropFiles.js"
 
 document.getElementById("togle-loading-screen").classList.add("invisible");
 
@@ -17,6 +18,7 @@ getBaseAddress(res => {
     runSearchBar();
     runBtnBar();
     runRightClickMenu();
+    runDropFiles();
     document.getElementById("file-container-message").innerText = "";
 
 });

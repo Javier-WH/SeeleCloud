@@ -33,10 +33,14 @@ function getContainerElemens() {
     let elementList = [];
 
     for (let i = 0; i < htmlCollection.length; i++) {
+        let addressArray = htmlCollection[i].id.split("/")
+        let dataTitle = addressArray[addressArray.length - 1];
 
         let file = document.createElement("div")
         file.setAttribute("class", htmlCollection[i].classList[0] + " " + htmlCollection[i].classList[1])
         file.setAttribute("id", htmlCollection[i].id)
+        file.setAttribute("data-title", dataTitle);
+
 
         let img = document.createElement("img");
         img.setAttribute("src", htmlCollection[i].getElementsByClassName("file-logo")[0].src)
